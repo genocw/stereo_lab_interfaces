@@ -27,4 +27,15 @@ public class RecordDeckTest {
         assertEquals("I'm playing a record!", record.playRecord());
     }
 
+    @Test
+    public void startsOnLowestSpeed() {
+        assertEquals(SpeedType.SPEED1, record.getCurrentSpeed());
+    }
+
+    @Test
+    public void canChangeSpeed() {
+        record.changeSpeed(SpeedType.SPEED2);
+        assertEquals(SpeedType.SPEED2, record.getCurrentSpeed());
+    }
+
 }
